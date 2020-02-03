@@ -15,18 +15,17 @@ app.get("/r/:subDirectionName", (req,res)=>{
 	console.log(subName);
 	res.send(`Welcome to ${subName.subDirectionName.toUpperCase()} page`);
 });
-app.get("/speak/:subDirectionName/", (req,res)=>{
-	const subName = req.params;
-    console.log(subName);
-    if(subName.subDirectionName == "pig"){
-        res.send(`The ${subName.subDirectionName.toUpperCase()} says 'Oink'`);
-    }else if(subName.subDirectionName == "cow"){
-        res.send(`The ${subName.subDirectionName.toUpperCase()} says 'Moo'`);
-    }else if(subName.subDirectionName == "dog"){
-        res.send(`The ${subName.subDirectionName.toUpperCase()} says 'Woof Woof'`);
-    }else{
-        res.send(`Sorry, Page not found... What are you doing wuth your life`);
+app.get("/speak/:animal/", (req,res)=>{
+    let sounds ={
+        pig : "Oink",
+        cow : "Moo",
+        dog : "Woof Woof",
+        cat : "I hate u human..",
+        goldfish : "..."
     }
+    const animal = req.params.animal;
+    console.log(animal);
+	res.send(`The ${animal} says "${sounds[animal]}"`);
 });
 app.get("/r/:subDirectionName/comments/:id/:title", (req,res)=>{
 	const subName = req.params;
