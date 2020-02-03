@@ -23,20 +23,15 @@ app.get("/speak/:animal/", (req,res)=>{
         cat : "I hate u human..",
         goldfish : "..."
     }
-    const animal = req.params.animal;
+    const animal = req.params.animal.toLocaleLowerCase();
     console.log(animal);
 	res.send(`The ${animal} says "${sounds[animal]}"`);
-});
-app.get("/r/:subDirectionName/comments/:id/:title", (req,res)=>{
-	const subName = req.params;
-	console.log(subName);
-	res.send(`Page Comments from ${subName.title.toUpperCase()}`);
 });
 app.get("/repeat/:word/:number", (req,res)=>{
 	const subName = req.params;
     let output = repeatFunction(subName.word, parseInt(subName.number) );
     console.log(output);
-	res.send(`${output.join(" ")}`);
+	res.send(output);
 });
 app.get("*", (req,res)=>{
 	res.send("Page no found");
@@ -44,11 +39,10 @@ app.get("*", (req,res)=>{
 app.listen("3000", () =>{
 	console.log("Now it is serving... in http://localhost:3000");
 });
-
 const repeatFunction = (word, num) =>{
-    let newWord = [];
+    let newWord = "";
     for (let i = 0; i < num; i++) {
-        newWord.push(word)
+        newWord += word + " ";
     }
     return newWord;
 }
