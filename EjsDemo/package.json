@@ -1,0 +1,23 @@
+{
+  "name": "ejsdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nedo8680/Node.git"
+  },
+  "author": "Edwin Fuentes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nedo8680/Node/issues"
+  },
+  "homepage": "https://github.com/nedo8680/Node#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
