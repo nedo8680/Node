@@ -1,4 +1,11 @@
+<%- include ("partials/header") %> 
 <h1><%= userTest.toLowerCase() %> welcome to Express </h1>
-
+ <% if (userTest === "edwin") { %>
+  <p>You choose well, a handsome guy!</p>
+<% } else { %>
+    <p>Bad choice, Edwin it's better!</p>
+ <% } %>
+  
 <p>Feel free to pass in!</p>
 
+<%- include ("partials/footer") %> 

@@ -1,0 +1,14 @@
+<%- include ("partials/header") %> 
+<h1>Post Page</h1>
+
+<h2>PS4 Games</h2>
+
+<% games.forEach(element => { %>
+    <li><%= element.title %> - <b> <%= element.author %></b>  </li>
+<% }) %>
+<form action="addGame" method="post">
+    <input type="text" name="game" placeholder="add game name">
+    <button>Add</button>
+</form>
+
+<%- include ("partials/footer") %> 
